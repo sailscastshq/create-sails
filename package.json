@@ -14,7 +14,11 @@
     "build-tools",
     "node",
     "express",
-    "starter"
+    "starter",
+    "vue",
+    "inertia",
+    "react",
+    "svelte"
   ],
   "author": "Kelvin Omereshone Oghenerhoro <kelvin@sailscasts.com>",
   "license": "MIT",
