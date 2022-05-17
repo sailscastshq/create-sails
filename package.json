@@ -13,7 +13,8 @@
     "sailsjs",
     "build-tools",
     "node",
-    "express"
+    "express",
+    "starter"
   ],
   "author": "Kelvin Omereshone Oghenerhoro <kelvin@sailscasts.com>",
   "license": "MIT",
