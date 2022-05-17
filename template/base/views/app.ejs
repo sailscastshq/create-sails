@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<%
+  var page;
+  var viewData;
+%>
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title><%= viewData && viewData.title ? viewData.title : 'My Inertia app' %></title>
+    <link rel="stylesheet" href="/css/app.bundle.css">
+</head>
+<body>
+    <div id="app" data-page="<%= JSON.stringify( page ?? { component:"index", props:{ name: "Inertia" }, version: 1, url: '/' }) %>"></div>
+    <script type="text/javascript" src="/js/app.bundle.js"></script>
+</body>
+</html>

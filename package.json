@@ -1,0 +1,35 @@
+{
+  "name": "create-sails",
+  "version": "0.0.1",
+  "description": "Quickly scaffold a fullstack Sails project with `npm init sails`",
+  "bin": {
+    "create-sails": "./index.js"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "sails",
+    "sailsjs",
+    "build-tools",
+    "node",
+    "express",
+    "starter"
+  ],
+  "author": "Kelvin Omereshone Oghenerhoro <kelvin@sailscasts.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/sailscasts/create-sails/issues"
+  },
+  "homepage": "https://github.com/sailscasts/create-sails#readme",
+  "engines": {
+    "node": "^14.13.1 || >=16.0.0"
+  },
+  "devDependencies": {
+    "@types/prompts": "^2.0.14",
+    "kolorist": "^1.5.1",
+    "minimist": "^1.2.6",
+    "prettier": "^2.6.2",
+    "prompts": "^2.4.2"
+  }
+}
