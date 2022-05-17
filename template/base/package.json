@@ -1,0 +1,30 @@
+{
+  "private": true,
+  "description": "a Sails application",
+  "keywords": [],
+  "dependencies": {
+    "sails": "^1.5.2",
+    "sails-hook-orm": "^4.0.0",
+    "sails-hook-sockets": "^2.0.0",
+    "@sailshq/connect-redis": "^3.2.1",
+    "@sailshq/socket.io-redis": "^5.2.0",
+    "@sailshq/lodash": "^3.10.3",
+    "@inertiajs/inertia-vue3": "^0.6.0",
+    "@inertiajs/progress": "^0.2.7"
+  },
+  "devDependencies": {
+    "sails.io.js": "^1.2.1",
+    "socket.io-client": "^2.2.0",
+    "inertia-sails": "^0.0.1"
+  },
+  "scripts": {
+    "start": "NODE_ENV=production node app.js",
+    "test": "npm run lint && npm run custom-tests && echo 'Done.'",
+    "lint": "./node_modules/eslint/bin/eslint.js . --max-warnings=0 --report-unused-disable-directives && echo '✔  Your .js files look good.'",
+    "custom-tests": "echo \"(No other custom tests yet.)\" && echo"
+  },
+  "main": "app.js",
+  "engines": {
+    "node": "^18.0"
+  }
+}
