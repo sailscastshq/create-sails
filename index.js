@@ -30,12 +30,6 @@ async function init() {
     boolean: true
   })
 
-  // if any of the feature flags is set, we would skip the feature prompts
-  const isFeatureFlagsUsed =
-    typeof (
-      argv.vue ??
-      argv.tailwind
-    ) === 'boolean'
 
     let targetDir = argv._[0]
     const defaultProjectName = !targetDir ? 'sails-project' : targetDir
@@ -80,12 +74,39 @@ async function init() {
           validate: (dir) => isValidPackageName(dir) || 'Invalid package.json name'
         },
         {
-          name: 'needsTailwind',
-          type: () => (isFeatureFlagsUsed ? null : 'toggle'),
-          message: 'Add Tailwind CSS?',
-          initial: true,
-          active: 'Yes',
-          inactive: 'No'
+          type: 'multiselect',
+          name: 'buildTool',
+          message: 'Choose build tool',
+          hint: '- Space to select. Return to submit',
+          min: 1,
+          max: 1,
+          choices: [
+            { title: 'Webpack', value: 'webpack' }
+          ],
+        },
+        {
+          type: 'multiselect',
+          name: 'css',
+          message: 'Choose CSS framework',
+          hint: '- Space to select. Return to submit',
+          min: 1,
+          max: 1,
+          choices: [
+            { title: 'Tailwind CSS', value: 'tailwind' }
+          ],
+        },
+        {
+          type: 'multiselect',
+          name: 'frontend',
+          message: 'Choose frontend framework',
+          hint: '- Space to select. Return to submit',
+          min: 1,
+          max: 1,
+          choices: [
+            { title: 'Vue', value: 'vue' },
+            { title: 'React', value: 'react' },
+            { title: 'Svelte', value: 'svelte' }
+          ]
         }
       ],
       {
@@ -102,8 +123,11 @@ async function init() {
       projectName,
       packageName = projectName ?? defaultProjectName,
       shouldOverwrite = argv.force,
-      needsTailwind = argv.tailwind,
+      buildTool = argv.buildTool,
+      css = argv.css,
+      frontend = argv.css
     } = result
+
     const root = path.join(cwd, targetDir)
 
     if (fs.existsSync(root) && shouldOverwrite) {
@@ -128,11 +152,9 @@ async function init() {
     render('base')
 
      // Add configs.
-    render('config/webpack')
-    if (needsTailwind) {
-      render('config/tailwind')
-    }
-    render('config/vue')
+    render(`config/${buildTool}`)
+    render(`config/${css}`)
+    render(`config/${frontend}`)
 
     // Instructions:
     // Supported package managers: pnpm > yarn > npm
@@ -147,7 +169,9 @@ async function init() {
       generateReadme({
         projectName: result.projectName ?? defaultProjectName,
         packageManager,
-        needsTailwind
+        css,
+        buildTool,
+        frontend
       })
     )
 
