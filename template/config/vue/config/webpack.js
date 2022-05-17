@@ -54,10 +54,6 @@
    ***************************************************************************/
    module: {
      rules: [
-       // {
-       //   test: /\.ejs$/,
-       //   loader: "ejs-loader"
-       // },
        {
          test: /\.css$/i,
          use: [MiniCssExtractPlugin.loader, 'css-loader', 'postcss-loader']
