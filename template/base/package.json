@@ -9,12 +9,12 @@
     "@sailshq/connect-redis": "^3.2.1",
     "@sailshq/socket.io-redis": "^5.2.0",
     "@sailshq/lodash": "^3.10.3",
-    "@inertiajs/progress": "^0.2.7"
+    "@inertiajs/progress": "^0.2.7",
+    "inertia-sails": "^0.0.2"
   },
   "devDependencies": {
     "sails.io.js": "^1.2.1",
-    "socket.io-client": "^2.2.0",
-    "inertia-sails": "^0.0.1"
+    "socket.io-client": "^2.2.0"
   },
   "scripts": {
     "start": "NODE_ENV=production node app.js",
