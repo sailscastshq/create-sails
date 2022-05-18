@@ -29,11 +29,13 @@
   "engines": {
     "node": "^14.13.1 || >=16.0.0"
   },
-  "devDependencies": {
-    "@types/prompts": "^2.0.14",
+  "dependencies": {
     "kolorist": "^1.5.1",
     "minimist": "^1.2.6",
-    "prettier": "^2.6.2",
     "prompts": "^2.4.2"
+  },
+  "devDependencies": {
+    "@types/prompts": "^2.0.14",
+    "prettier": "^2.6.2"
   }
 }
