@@ -1,6 +1,6 @@
 {
   "name": "create-sails",
-  "version": "0.0.7",
+  "version": "0.0.8",
   "description": "Quickly scaffold a fullstack Sails project with `npm init sails`",
   "bin": {
     "create-sails": "./index.js"
