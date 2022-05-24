@@ -1,9 +1,7 @@
 module.exports = {
   content: [
-    "./assets/js/pages/**/*.vue",
-    "./assets/js/components/**/*.vue",
-    "./assets/js/**/*.js",
-    "./views/**/*.ejs"
+    './views/**/*.ejs',
+    './assets/js/**/*.{js,vue}'
   ],
   theme: {
     extend: {},
