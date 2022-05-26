@@ -73,28 +73,6 @@ async function init() {
           initial: () => toValidPackageName(targetDir),
           validate: (dir) => isValidPackageName(dir) || 'Invalid package.json name'
         },
-        // {
-        //   type: 'multiselect',
-        //   name: 'buildTool',
-        //   message: 'Choose build tool',
-        //   hint: '- Space to select. Return to submit',
-        //   min: 1,
-        //   max: 1,
-        //   choices: [
-        //     { title: 'Webpack', value: 'webpack' }
-        //   ],
-        // },
-        // {
-        //   type: 'multiselect',
-        //   name: 'css',
-        //   message: 'Choose CSS framework',
-        //   hint: '- Space to select. Return to submit',
-        //   min: 1,
-        //   max: 1,
-        //   choices: [
-        //     { title: 'Tailwind CSS', value: 'tailwind' }
-        //   ],
-        // },
         {
           type: 'multiselect',
           name: 'frontend',
@@ -123,8 +101,8 @@ async function init() {
       projectName,
       packageName = projectName ?? defaultProjectName,
       shouldOverwrite = argv.force,
-      buildTool = argv.buildTool ?? 'webpack',
-      css = argv.css ?? 'tailwind',
+      buildTool = 'webpack',
+      css = 'tailwind',
       frontend = argv.frontend ?? 'vue'
     } = result
 
