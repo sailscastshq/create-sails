@@ -73,28 +73,28 @@ async function init() {
           initial: () => toValidPackageName(targetDir),
           validate: (dir) => isValidPackageName(dir) || 'Invalid package.json name'
         },
-        {
-          type: 'multiselect',
-          name: 'buildTool',
-          message: 'Choose build tool',
-          hint: '- Space to select. Return to submit',
-          min: 1,
-          max: 1,
-          choices: [
-            { title: 'Webpack', value: 'webpack' }
-          ],
-        },
-        {
-          type: 'multiselect',
-          name: 'css',
-          message: 'Choose CSS framework',
-          hint: '- Space to select. Return to submit',
-          min: 1,
-          max: 1,
-          choices: [
-            { title: 'Tailwind CSS', value: 'tailwind' }
-          ],
-        },
+        // {
+        //   type: 'multiselect',
+        //   name: 'buildTool',
+        //   message: 'Choose build tool',
+        //   hint: '- Space to select. Return to submit',
+        //   min: 1,
+        //   max: 1,
+        //   choices: [
+        //     { title: 'Webpack', value: 'webpack' }
+        //   ],
+        // },
+        // {
+        //   type: 'multiselect',
+        //   name: 'css',
+        //   message: 'Choose CSS framework',
+        //   hint: '- Space to select. Return to submit',
+        //   min: 1,
+        //   max: 1,
+        //   choices: [
+        //     { title: 'Tailwind CSS', value: 'tailwind' }
+        //   ],
+        // },
         {
           type: 'multiselect',
           name: 'frontend',
@@ -123,9 +123,9 @@ async function init() {
       projectName,
       packageName = projectName ?? defaultProjectName,
       shouldOverwrite = argv.force,
-      buildTool = argv.buildTool,
-      css = argv.css,
-      frontend = argv.css
+      buildTool = argv.buildTool ?? 'webpack',
+      css = argv.css ?? 'tailwind',
+      frontend = argv.frontend ?? 'vue'
     } = result
 
     const root = path.join(cwd, targetDir)
@@ -174,6 +174,19 @@ async function init() {
         frontend
       })
     )
+
+    // Inject default DEK
+    const generateDefaultDEK = require('./helpers/generate-default-dek')
+    const modelsConfigPath = path.resolve(root, 'config/models.js')
+    const modelsConfigContent = fs.readFileSync(modelsConfigPath, 'utf8')
+    fs.writeFileSync(modelsConfigPath, modelsConfigContent.replace('$defaultDEK', generateDefaultDEK()))
+
+
+    // Inject session secret
+    const generateSessionSecret = require('./helpers/generate-session-secret')
+    const sessionConfigPath = path.resolve(root, 'config/session.js')
+    const sessionConfigContent = fs.readFileSync(sessionConfigPath, 'utf8')
+    fs.writeFileSync(sessionConfigPath, sessionConfigContent.replace('$secret', generateSessionSecret()))
 
     console.log(`\nDone. Now run:\n`)
 
