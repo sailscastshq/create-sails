@@ -27,6 +27,13 @@
      app: './assets/js/app.js',
    },
 
+   resolve: {
+    alias: {
+     '~': path.resolve(__dirname, '..', 'assets'),
+     '@': path.resolve(__dirname, '..', 'assets', 'js')
+   }
+  },
+
    /***************************************************************************
     *                                                                          *
     * Output bundled .js files with a `.bundle.js` extension into              *

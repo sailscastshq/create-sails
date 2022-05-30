@@ -1,6 +1,6 @@
 <script>
   import { Link } from '@inertiajs/inertia-svelte'
-  import Counter from '../components/Counter.svelte'
+  import Counter from '@/components/Counter.svelte'
 
   export let name
 </script>

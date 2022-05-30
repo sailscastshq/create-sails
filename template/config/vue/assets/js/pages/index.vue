@@ -1,6 +1,6 @@
 <script setup>
 import { Link } from '@inertiajs/inertia-vue3'
-import Counter from "../components/Counter.vue";
+import Counter from "@/components/Counter.vue";
 
 const { name } = defineProps({
   name: String,
