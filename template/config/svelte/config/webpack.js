@@ -30,6 +30,10 @@
 
    resolve: {
      extensions: ['.svelte', '...'],
+     alias: {
+      '~': path.resolve(__dirname, '..', 'assets'),
+      '@': path.resolve(__dirname, '..', 'assets', 'js')
+    }
    },
 
    /***************************************************************************

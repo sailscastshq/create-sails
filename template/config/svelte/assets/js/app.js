@@ -1,6 +1,6 @@
 import { createInertiaApp } from '@inertiajs/inertia-svelte'
 import { InertiaProgress } from '@inertiajs/progress'
-import '../css/main.css'
+import '~/css/main.css'
 
 InertiaProgress.init()
 
