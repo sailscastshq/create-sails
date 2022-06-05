@@ -8,7 +8,7 @@ module.exports = {
   exits: {},
 
   fn: async function () {
-    return sails.hooks.inertia.render('example', {
+    return sails.inertia.render('example', {
       quote: "You can shine no matter what you're made of - Bigweld",
     })
   },
