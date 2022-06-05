@@ -8,7 +8,7 @@ module.exports = {
   exits: {},
 
   fn: async function () {
-    return sails.hooks.inertia.render('index', {
+    return sails.inertia.render('index', {
       name: 'Inertia',
     })
   },
