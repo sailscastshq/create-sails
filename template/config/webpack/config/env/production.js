@@ -22,8 +22,7 @@
  const TerserPlugin = require("terser-webpack-plugin");
 
  module.exports = {
-
-
+   hookTimeout: 80000,
    /**************************************************************************
    *                                                                         *
    * Tell Sails what database(s) it should use in production.                *
