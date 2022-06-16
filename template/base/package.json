@@ -11,7 +11,7 @@
     "@sailshq/lodash": "^3.10.3",
     "@inertiajs/inertia": "^0.11.0",
     "@inertiajs/progress": "^0.2.7",
-    "inertia-sails": "^0.0.7"
+    "inertia-sails": "^0.0.9"
   },
   "devDependencies": {
     "sails.io.js": "^1.2.1",
