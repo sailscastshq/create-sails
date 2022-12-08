@@ -1,5 +1,5 @@
-export default {
+module.exports = {
   semi: false,
   singleQuote: true,
-  trailingComma: "none"
+  trailingComma: 'none'
 }
