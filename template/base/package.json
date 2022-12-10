@@ -11,7 +11,7 @@
     "@sailshq/lodash": "^3.10.3",
     "@inertiajs/inertia": "^0.11.0",
     "@inertiajs/progress": "^0.2.7",
-    "inertia-sails": "^0.1.0"
+    "inertia-sails": "^0.1.1"
   },
   "devDependencies": {
     "sails.io.js": "^1.2.1",
@@ -19,12 +19,8 @@
   },
   "scripts": {
     "start": "NODE_ENV=production node app.js",
-    "test": "npm run lint && npm run custom-tests && echo 'Done.'",
-    "lint": "./node_modules/eslint/bin/eslint.js . --max-warnings=0 --report-unused-disable-directives && echo '✔  Your .js files look good.'",
-    "custom-tests": "echo \"(No other custom tests yet.)\" && echo"
+    "lint": "npx prettier --check .",
+    "lint:fix": "npx prettier --write ."
   },
-  "main": "app.js",
-  "engines": {
-    "node": "^18.0"
-  }
+  "main": "app.js"
 }
