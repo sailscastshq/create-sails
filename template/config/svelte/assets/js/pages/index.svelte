@@ -55,14 +55,5 @@
         Tailwind CSS
       </a>
     </li>
-    <li>
-      <a
-        href="https://webpack.org"
-        target="_blank"
-        class="hover:text-gray-600 hover:underline"
-      >
-        Webpack
-      </a>
-    </li>
   </ul>
 </div>
