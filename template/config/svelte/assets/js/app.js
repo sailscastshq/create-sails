@@ -1,12 +1,15 @@
-import { createInertiaApp } from '@inertiajs/inertia-svelte'
-import { InertiaProgress } from '@inertiajs/progress'
+import { createInertiaApp } from '@inertiajs/svelte'
 import '~/css/main.css'
 
 InertiaProgress.init()
 
 createInertiaApp({
+  title: 'SITS stack',
   resolve: (name) => require(`./pages/${name}`),
   setup({ el, App, props }) {
     new App({ target: el, props })
   },
+  progress: {
+    color: '#29d'
+  }
 })
