@@ -3,7 +3,7 @@ import { createInertiaApp } from '@inertiajs/vue3'
 import '~/css/main.css'
 
 createInertiaApp({
-  title: 'New App',
+  title: 'VITS stack',
   resolve: (name) => require(`./pages/${name}`),
   setup({ el, App, props, plugin }) {
     createApp({ render: () => h(App, props) })
