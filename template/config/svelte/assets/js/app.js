@@ -1,8 +1,6 @@
 import { createInertiaApp } from '@inertiajs/svelte'
 import '~/css/main.css'
 
-InertiaProgress.init()
-
 createInertiaApp({
   title: () => 'SITS stack',
   resolve: (name) => require(`./pages/${name}`),
