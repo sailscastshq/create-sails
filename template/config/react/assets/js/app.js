@@ -1,14 +1,14 @@
-import React from 'react'
-import { render } from 'react-dom'
-import { createInertiaApp } from '@inertiajs/inertia-react'
-import { InertiaProgress } from '@inertiajs/progress'
+import { createRoot } from 'react-dom/client'
+import { createInertiaApp } from '@inertiajs/react'
 import '~/css/main.css'
 
-InertiaProgress.init()
-
 createInertiaApp({
+  title: 'RITS stack',
   resolve: (name) => require(`./pages/${name}`),
   setup({ el, App, props }) {
-    render(<App {...props} />, el)
+    createRoot(el).render(<App {...props} />)
   },
+  progress: {
+    color: '#29d'
+  }
 })
