@@ -1,6 +1,7 @@
-# create-sails
 
-An easy way to start a modern full-stack Sails project.
+# create-sails is now in the boring-stack repo
+
+The create-sails CLI has been moved to [the boring-stack repo]([https://github.com/sailscastshq/boring-stack/create-sails](https://github.com/sailscastshq/boring-stack/tree/main/create-sails))
 
 ## Usage
 
